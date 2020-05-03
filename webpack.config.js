@@ -1,6 +1,6 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js',
@@ -19,10 +19,17 @@ module.exports = {
         }
       },
       {
-        test: /\.(css)$/,
+        test: /\.(scss)$/,
         exclude: /node_modules/,
-        use: [ "style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"]
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+          options: {
+            outputPath: 'sdsds',
+          },
+        },
       {
         test: /\.html$/,
         use: [
